@@ -94,6 +94,7 @@
         }
     ]
 }
+```
 
 ### 2. 게시글 상세 조회
 `GET/postings/<posting_id>

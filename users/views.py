@@ -25,7 +25,7 @@ class SignupView(View):
             )
 
         except KeyError:
-            return JsonResponse({"message": "KEYERROR"}, status=400)
+            return JsonResponse({"message": "KEY_ERROR"}, status=400)
         
         return JsonResponse({"message": "CREATED!"}, status=201)
     
@@ -41,7 +41,7 @@ class SigninView(View):
             access_token = jwt.encode({'id': user.id}, SECRET_KEY, algorithm=ALGORITHM)
         
         except KeyError:
-            return JsonResponse({"message": "KEYERROR"}, status=400)
+            return JsonResponse({"message": "KEY_ERROR"}, status=400)
 
         except User.DoesNotExist:
             return JsonResponse({"message": "LOGIN FAILED!"}, status=401)

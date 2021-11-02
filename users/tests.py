@@ -72,7 +72,7 @@ class Test(TestCase):
 
         self.assertEqual(response.json(),
             {
-                "message": "KEYERROR"
+                "message": "KEY_ERROR"
             }
         )
         self.assertEquals(response.status_code, 400)
@@ -124,7 +124,7 @@ class Test(TestCase):
         
         self.assertEqual(response.json(),
             {
-                "message": "DO NOT EXIST!"
+                "message": "LOGIN FAILED!"
             }
         )
         self.assertEquals(response.status_code, 401)
@@ -141,7 +141,7 @@ class Test(TestCase):
         
             self.assertEqual(response.json(),
                 {
-                    "message": "DO NOT EXIST!"
+                    "message": "LOGIN FAILED!"
                 }
             )
             self.assertEquals(response.status_code, 401)
@@ -153,7 +153,7 @@ class Test(TestCase):
 
         self.assertEqual(response.json(),
             {
-                "message": "KEYERROR"
+                "message": "KEY_ERROR"
             }
         )
         self.assertEquals(response.status_code, 400)

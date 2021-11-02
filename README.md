@@ -1,8 +1,8 @@
 # aimmo 과제_게시물 CRUD
 
 ## [Team] WithCODE
+- 박현우 : 회원가입/로그인 
 - 김주형 : 게시글 CRUD 
-- 박현우 : 회원가입/로그인  
 - 이정아 : 댓글 CRUD
 ----
 ## 회원가입 / 로그인
@@ -42,12 +42,112 @@
 
 
 
-
-
-
-
 ------
 ## 게시글CRUD
+
+### 1. 게시글 생성
+`POST/postings/`
+
+- login_decorator로 유저확인
+- body로 보내진 정보 확인하고 게시글 정보와 맞지 않으면 Key error 반환
+- posting_id와 일치하는 게시글 없으면 does not exist error 반환
+- 보내진 정보를 기반으로 게시글 생성
+
+### **request**
+**게시글**
+
+```json
+{
+    "title":"가입인사 드립니다",
+    "content":"안녕하세요"
+    "category_id" : 1
+}
+```
+
+-----
+
+### 2. 게시글 목록 조회
+`GET/postings/<posting_id>/list?search="검색어"
+
+- posting_id가 전달 되지 않으면 error 반환
+- 검색어에 해당하는 게시글(게시글 명, 연관된 카테고리) 반환
+- 주어진 조건에 해당하는 게시글 목록 조회
+
+### **response**
+```json
+{
+    "result": [{
+        "id"         : 1,
+        "title"      : "가입인사 드립니다",
+        "views"      : 0,
+        "category"   : "인사게시판",
+        "created_at" : "2021-01-01",
+        "updated_at" : "2021-01-01",
+        },
+        {
+         "id"         : 2,
+        "title"      : "가입인사 ",
+        "views"      : 0,
+        "category"   : "인사게시판",
+        "created_at" : "2021-01-01",
+        "updated_at" : "2021-01-01",
+        }
+    ]
+}
+
+### 2. 게시글 상세 조회
+`GET/postings/<posting_id>
+
+- posting_id가 전달 되지 않으면 error 반환
+- postingd_id에 해당하는 게시글 존재하지 않으면, does not exist error 반환
+- posting_id가 올바르면 게시글 조회
+
+
+### **response**
+```json
+{
+    "result": {
+        "id"         : 1,
+        "title"      : "가입인사 드립니다",
+        "content"    : "안녕하세요",
+        "category"   : "인사",
+        "views"      : 0,
+        "created_at" : "2021-01-01",
+        "updated_at" : "2021-01-01",
+    }
+}
+```
+
+
+### 3. 게시글 수정
+`PATCH/postings/<posting_id>`
+
+- posting_id가 전달 되지 않으면 error 반환
+- postingd_id에 해당하는 게시글 존재하지 않으면, does not exist error 반환
+- login_decorator에서 받은 user_id와 게시글 작성자의 id를 비교하여 다르면 forbidden error 반환
+- posting_id, user_id 올바르면 body에서 받은 정보를 기반으로 수정
+
+### **request**
+
+```json
+{
+    "title" : "가입 인사 안합니다"
+    "content" : "안녕하세요 수정수정수정수정수정 "
+}
+```
+----
+### 4. 게시글 삭제
+`DELETE/postings/comments?id=<comment_id>`
+
+- posting_id가 전달 되지 않으면 error 반환
+- postingd_id에 해당하는 게시글 존재하지 않으면, does not exist error 반환
+- login_decorator에서 받은 user_id와 게시글 작성자의 id를 비교하여 다르면 forbidden error 반환
+- posting_id, user_id 올바르면 게시글 삭제
+
+### 5. unit test 
+![image](https://user-images.githubusercontent.com/86050295/139955978-44003f15-3a5c-4132-aef0-9a4f663ea385.png)
+
+
 -----------
 ## 댓글CRUD
 ### 1. 댓글 저장

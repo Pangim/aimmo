@@ -4,6 +4,10 @@
 
 3.144.30.193:8000
 
+## [기술스택]
+
+python, django, djongo, mongodb, postman, jwt, bcrypt, AWS ec2, atlas
+
 ## [Team] WithCODE
 - 박현우 : 회원가입/로그인 
 - 김주형 : 게시글 CRUD 

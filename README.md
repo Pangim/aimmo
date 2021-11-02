@@ -26,7 +26,7 @@ python, django, djongo, mongodb, postman, jwt, bcrypt, AWS ec2, atlas
 }
 ```
 ### 2. 로그인
-`POST/users/sign`
+`POST/users/signin`
 - 같은 이메일 유저 로그인 불가
 - jwt를 이용한 토큰 생성
 ### **request**

@@ -25,7 +25,7 @@ class SignupView(View):
             )
 
         except KeyError:
-            return JsonResponse({"message": "KEYERROR"}, status=400)
+            return JsonResponse({"message": "KEY_ERROR"}, status=400)
         
         return JsonResponse({"message": "CREATED!"}, status=201)
     
@@ -42,7 +42,7 @@ class SigninView(View):
             request.session['user'] = user.id
         
         except KeyError:
-            return JsonResponse({"message": "KEYERROR"}, status=400)
+            return JsonResponse({"message": "KEY_ERROR"}, status=400)
 
         except User.DoesNotExist:
             return JsonResponse({"message": "LOGIN FAILED!"}, status=401)

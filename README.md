@@ -258,5 +258,5 @@ python, django, djongo, mongodb, postman, jwt, bcrypt, AWS ec2, atlas
 <img width="409" alt="스크린샷 2021-11-03 오전 12 20 12" src="https://user-images.githubusercontent.com/87896537/139876375-cecb81c8-82d8-45dc-a6b6-88fcf927c3f5.png">
 
 
-> 회고 블로그
-  박현우 : https://velog.io/@pang/aimmo-%EA%B3%BC%EC%A0%9C-%ED%9A%8C%EA%B3%A0
+> 회고 블로그<br>
+> 박현우 : https://velog.io/@pang/aimmo-%EA%B3%BC%EC%A0%9C-%ED%9A%8C%EA%B3%A0

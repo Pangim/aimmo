@@ -259,4 +259,4 @@ python, django, djongo, mongodb, postman, jwt, bcrypt, AWS ec2, atlas
 
 
 > 회고 블로그
-> 박현우 : https://velog.io/@pang/aimmo-%EA%B3%BC%EC%A0%9C-%ED%9A%8C%EA%B3%A0
+  박현우 : https://velog.io/@pang/aimmo-%EA%B3%BC%EC%A0%9C-%ED%9A%8C%EA%B3%A0

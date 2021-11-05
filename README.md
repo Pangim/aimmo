@@ -13,6 +13,28 @@ python, django, djongo, mongodb, postman, jwt, bcrypt, AWS ec2, atlas
 - 김주형 : 게시글 CRUD 
 - 이정아 : 댓글 CRUD
 ----
+
+## [요구 사항]
+**에이모 선호 기술스택 : python flask, mashmallow, mongoengine <br>
+필수 사용 데이터베이스: mongodb**
+
+
+- 글 작성, 글 확인, 글 목록 확인, 글 수정, 글 삭제가 되는 API
+    - Delete과 Update는 해당 유저의 글만 가능
+     즉, 유저 생성, 인가, 인증 기능도 필요
+    - Read는 pagination 구현 필수
+- 게시글 카테고리
+- 게시글 검색
+- 대댓글(1 depth)
+    - 대댓글 pagination
+- 게시글 읽힘 수
+    - 같은 User가 게시글을 읽는 경우 count 수 증가하면 안 됨
+- Rest API 설계
+- Unit Test
+- 1000만건 이상의 데이터를 넣고 성능테스트 진행 결과 필요
+
+------
+
 ## 회원가입 / 로그인
 ### 1. 회원가입
 `POST/users/signup`
